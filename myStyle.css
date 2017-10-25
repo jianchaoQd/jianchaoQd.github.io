@@ -1,0 +1,22 @@
+
+/*文章列表悬浮阴影*/
+.article,.left-col #header .profilepic img
+{transition: all .6s;}
+.article:hover{box-shadow: 1px 2px 20px #333;}
+
+/*头像动画*/
+.left-col #header{transform-style: preserve-3d;}
+.left-col #header .profilepic{overflow: visible;border: 5px solid #94635c;}
+.left-col #header .profilepic img{transform: rotateY(0deg);transform-origin: left;}
+.left-col #header .profilepic:hover .js-avatar{transform: rotateY(138deg);}
+
+/*左侧模块背景*/
+.left-col .overlay{
+  background: url("img/leftBg_01.jpg") no-repeat center !important;
+  background-size: cover !important;
+}
+
+
+
+
+
