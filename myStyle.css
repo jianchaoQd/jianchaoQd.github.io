@@ -1,5 +1,18 @@
-
+.left-col{
+  background: #fcfdfd;
+}
 /*文章列表悬浮阴影*/
+.left-col #header .profilepic{
+  background: url("img/headerIcon.png") no-repeat center;
+  background-size: 100% 100%;
+  width:168px;
+}
+
+
+.left-col #header .profilepic img{
+  max-width: 59%;
+  margin-left: -3px;
+}
 .article,.left-col #header .profilepic img
 {transition: all .6s;}
 .article:hover{box-shadow: 1px 2px 20px #333;}
@@ -12,7 +25,33 @@
   background-size: cover !important;
 }
 
-
-
+.left-col .intrude-less{
+  margin: 196px auto 0;
+}
+.left-col #header .header-author{
+  margin-bottom: 0;
+  font-size: 22px;
+}
+.left-col #header .header-menu{
+  min-height: 135px;
+}
+.left-col #header .header-menu{
+  margin-left: 0;
+}
+.left-col #header .header-menu li{
+  margin-top: 16px;
+}
+.left-col #header .header-menu li:first-child{
+  margin-top: 0;
+}
+.left-col #header .header-menu li a{
+  padding: 4px 22px;
+  background-color: #47c4b1;
+  border-radius: 6px;
+  color: #fff;
+}
+.left-col #header .header-menu li a:hover{
+  background-color: #42b4a3;
+}
 
 
