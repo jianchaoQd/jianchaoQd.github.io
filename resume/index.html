@@ -6,23 +6,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>简历</title>
-
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        .wrap{width: 100%;height: 100%;position: absolute;background:#383b4e;background-size: 100%;}
+        /*-----头像 begin-----*/
+        .headPortrait{width:200px;height: 200px;left: 50%;top: 50%;margin-left: -100px;margin-top: -100px;position: absolute;border-radius: 50%;
+            transform: scale(1);
+            animation: circular 1s linear;
+        }
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        .outIcon{width: 70%;height: 70%;background: url("images/outIcon.png") no-repeat center;background-size: 100% 100%;position: absolute;left: 50%;top: 50%;margin-left: -35%;margin-top: -35%;
+            animation: ringLeft 30s infinite linear;
+        }
+        .inIcon{width: 100%;height: 100%;background: url("images/inIcon.png") no-repeat center;background-size: 100% 100%;position: absolute;
+            animation: ring 30s infinite linear;
+        }
+        .circular{width: 50%;height: 50%;position: absolute;left: 50%;top: 50%;margin-left: -25%;margin-top: -25%;border-radius: 50%;border: 2px solid #ffffff;
+            background: linear-gradient(135deg, rgba(103,107,142,0.8) 0%,rgba(120,128,165,0.8) 51%,rgba(103,107,142,0.8) 100%);
+            cursor: pointer;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 24px;
+            z-index: 999;
+            /*box-shadow: 0px 0px 180px #fff;*/
+            /*animation: shadow 1s linear;*/
+        }
+        .circular a{
+            background-color: rgba(255,255,255, .5);
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            line-height: 100px;
+            top: 50%;
+            margin-top: -50px;
+            left: 50%;
+            margin-left: -50px;
+            opacity: 0;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .circular:hover a{
+            animation: scaleout 1.3s ease-out infinite;
+        }
+        /*-----头像 end-----*/
+
+        /*-----动画-----*/
+        @keyframes shadow
+        {
+            0% {box-shadow: 0px 0px 0px #fff;}
+            100% {box-shadow: 0px 0px 180px #fff;}
+        }
+
+        @-moz-keyframes scaleout {
+            0% {
+                -moz-transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                -moz-transform: scale(2);
+            }
+        }
+        @-webkit-keyframes scaleout {
+            0% {
+                -webkit-transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                -webkit-transform: scale(2);
+            }
+        }
+
+        @keyframes circular
+        {
+            0% {transform: scale(0) rotate(360deg);}
+            100% {transform: scale(1) rotate(0deg);}
+        }
+        @keyframes ring
+        {
+            0% {-webkit-transform: rotate(0deg);}
+            100% {-webkit-transform: rotate(360deg);}
+        }
+        @keyframes ringLeft
+        {
+            0% {-webkit-transform: rotate(0deg);}
+            100% {-webkit-transform: rotate(-360deg);}
+        }
+    </style>
 </head>
 <body>
-<h1>你好，世界！</h1>
-<a href="/" target="_self">返回主页</a>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<div class="wrap">
+    <div class="headPortrait">
+        <span class="outIcon"></span>
+        <span class="inIcon"></span>
+        <span class="circular">
+            <span>My</span>
+            <a href="javascript:;" target="_blank" rel="external"></a>
+        </span>
+    </div>
+    <canvas id="myCanvas" width="" height=""></canvas>
+</div>
+<a href="/" target="_self" class="btn btn-primary">返回主页</a>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var canvas=$('#myCanvas');
+
+    $(window).resize(resizeCanvas);
+
+    function resizeCanvas() {
+
+        canvas.attr("width", $(window).get(0).innerWidth - 20);
+
+        canvas.attr("height", $(window).get(0).innerHeight - 20);
+
+        context.fillRect(0, 0, canvas.width(), canvas.height());
+
+    }
+
+    var canvasWidth = canvas.width();
+    var canvasHeight = canvas.height();
+
+    var context=canvas.get(0).getContext("2d");
+
+    var x = 374;
+    var y = 240;
+    var z = 0;
+
+    setTimeout(function(){
+        animate();
+    },1000);
+
+    function animate(){
+        if(x > 200){
+            x--;
+        }else {
+            x = z;
+        }
+        if(y > 140){
+            y--;
+        }
+        //context.clearRect(0,0,canvasWidth,canvasHeight);
+        context.fillStyle="#ffffff";
+        context.fillRect(x,y,1,1);
+        setTimeout(animate,10);
+        z = x;
+    }
+
+</script>
 </body>
 </html>
