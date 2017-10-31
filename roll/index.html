@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{list-style: none;}
+        .wrap{
+            width: 500px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .wrap .list{
+            width: 9999px;
+            position: absolute;
+        }
+        .wrap .list ul li{float: left;}
+        .wrap .list ul li a{
+            text-align: center;
+            display: block;
+            float: left;
+            width: 500px;
+            height: 400px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+        .one{
+            background-color: #00a2d4;
+        }
+        .two{
+            background-color: tomato;
+        }
+        .three{
+            background-color: #00B83F;
+        }
+        .four{
+            background-color: #0a246a;
+        }
+        .five{
+            background-color: #6b4a38;
+        }
+
+        .btn{
+            display: block;
+            color: #333333;
+            font-size: 20px;
+            position: absolute;
+            top:50%;
+            margin-top: -20px;
+            z-index: 999;
+        }
+        .left{
+            left: 20px;
+        }
+        .right{
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <a href="javascript:;" class="btn left" data-flip="prev" target="_blank" rel="external">left</a>
+    <div class="list">
+        <ul>
+            <li><a href="#" class="one">1</a></li>
+            <li><a href="#" class="two">2</a></li>
+            <li><a href="#" class="three">3</a></li>
+            <li><a href="#" class="four">4</a></li>
+            <li><a href="#" class="five">5</a></li>
+        </ul>
+    </div>
+    <img src="" alt="">
+    <a href="javascript:;" class="btn right" data-flip="next" target="_blank" rel="external">right</a>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+<script type="text/javascript">
+    var i = 0, len = $('.list ul li').length * 2;
+    $('.list ul').append($('.list ul').html());
+    $('.list').css('left',-len*500/2);
+    $('.btn').click(function(){
+        if($(this).attr('data-flip') == 'prev'){
+            i = parseInt($(".list").css("left"))+500;
+            roll(i);
+        }else {
+            i=parseInt($(".list").css("left"))-500;
+            roll(i);
+        }
+    });
+    function roll(i){
+        if($(".list").is(':animated')){
+            return;
+        }
+        $('.list').animate({
+            'left':i
+        },500,function(){
+            if(i == 0){
+                $('.list').css('left',-len*500/2)
+            }else if(i == (1-len)*500){
+                $(".list").css('left',(1-len/2)*500);
+            }
+        })
+    }
+</script>
+</body>
+</html>
