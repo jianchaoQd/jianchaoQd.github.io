@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016/7 | 前端博客</title>
+  <title>无缝图片轮播 | 前端博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="前端博客">
-<meta property="og:url" content="http://yoursite.com/archives/2016/07/index.html">
+  <meta name="description" content="1.页面结构搭建html页面代码展示：">
+<meta name="keywords" content="图片轮播,轮播器,交互效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无缝图片轮播">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/roll/index.html">
 <meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="1.页面结构搭建html页面代码展示：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-31T06:29:04.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端博客">
+<meta name="twitter:title" content="无缝图片轮播">
+<meta name="twitter:description" content="1.页面结构搭建html页面代码展示：">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -146,64 +151,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-roll" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/22/blog_success/" class="archive-article-date">
-  	<time datetime="2016-07-22T07:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/22/blog_success/">博客搭建成功试试Markdown</a>
+    <h1 class="article-title" itemprop="name">
+      无缝图片轮播
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/29/roll/" class="archive-article-date">
+  	<time datetime="2017-10-29T06:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-页面结构搭建"><a href="#1-页面结构搭建" class="headerlink" title="1.页面结构搭建"></a>1.页面结构搭建</h3><p>html页面代码展示：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;a href=&quot;javascript:;&quot; class=&quot;btn left&quot; data-flip=&quot;prev&quot;&gt;left&lt;/a&gt;</div><div class="line">    &lt;div class=&quot;list&quot;&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a href=&quot;#&quot;&gt;</div><div class="line">                    &lt;img src=&quot;images/1.jpg&quot; alt=&quot;轮播图1&quot;&gt;</div><div class="line">                &lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a href=&quot;#&quot;&gt;</div><div class="line">                    &lt;img src=&quot;images/2.jpg&quot; alt=&quot;轮播图2&quot;&gt;</div><div class="line">                &lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a href=&quot;#&quot;&gt;</div><div class="line">                    &lt;img src=&quot;images/3.jpg&quot; alt=&quot;轮播图3&quot;&gt;</div><div class="line">                &lt;/a&gt;</div><div class="line">            &lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;a href=&quot;javascript:;&quot; class=&quot;btn right&quot; data-flip=&quot;next&quot;&gt;right&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><span style="color:#666666;font-size:16px;">页面结构搭建分析：</span></p>
+<ul>
+<li>div.box 为轮播器的外围父容器，调整轮播器的大小</li>
+<li>div.list 为存放轮播图的父容器（轮播图能够左右滑动也是依靠此div）</li>
+<li>最后就是创建一个轮播图列表</li>
+</ul>
+<h3 id="2-css样式编写"><a href="#2-css样式编写" class="headerlink" title="2. css样式编写"></a>2. css样式编写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width:500px;</div><div class="line">    height:500px;</div><div class="line">    position:relative;</div><div class="line">    overflow:hidden;</div><div class="line">&#125;</div><div class="line">.list&#123;</div><div class="line">    width: 9999px;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">.list ul li&#123;</div><div class="line">    float: left;</div><div class="line">&#125;</div><div class="line">.list ul li a&#123;</div><div class="line">    display:block;</div><div class="line">    width:500px;</div><div class="line">    height:500px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><span style="color:#666666;font-size:16px;">css样式分析：</span></p>
+<ul>
+<li>div.box 的宽高即规定了轮播器的大小，overflow:hidden;属性做到了轮播器只展示一张图片，其余会隐藏起来</li>
+<li>div.list 相对于其父元素定位，使其脱离文档悬浮在文档之上（这样就可以左右改变div.list的 left or right 值来达到切换效果），其宽度设定没有限制但必须要能存放下你所有的轮播图</li>
+<li>最后就是来规定轮播图左右排列</li>
+</ul>
+<h3 id="3-JS交互"><a href="#3-JS交互" class="headerlink" title="3. JS交互"></a>3. JS交互</h3><p>上面已经把页面结构搭建和css样式编写搞定，那么下来就该来分析一波js是怎么实现交互的了。</p>
+<p>实现思路：<br>    首先无缝轮播是图片到第一张继续向左会平滑的切换到最后一张或者到最后一张继续向右会平滑的切换到第一张。<br>    那么，我们在这可以利用一个小技巧：</p>
+<ul>
+<li>我们可以先把图片来整体的复制一份出来（图片排序为1,2,3复制一份后则为1,2,3,1,2,3）</li>
+<li>然后当页面加载完成把图片定位到复制出来的图片的第一张及为第二组的第一张</li>
+<li>最后剩下的就是左右切换改变div.list的left or right 值来定位图片的位置</li>
+</ul>
+<p>以下是js代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//定义变量i和获取图片的张数（此处length * 2 是因为图片要整体复制一份，所有长度为原始长度 * 2）</div><div class="line">var i = 0, </div><div class="line">    len = $(&apos;.list ul li&apos;).length * 2;</div><div class="line">    //此处是向ul中添加一组相同的图片（即为复制出来的图片）</div><div class="line">    $(&apos;.list ul&apos;).append($(&apos;.list ul&apos;).html());</div><div class="line">    //把list定位到第二组图片的第一张的位置</div><div class="line">    $(&apos;.list&apos;).css(&apos;left&apos;,-len*500/2);</div><div class="line">    //左右按钮点击事件</div><div class="line">    $(&apos;.btn&apos;).click(function()&#123;</div><div class="line">        if($(this).attr(&apos;data-flip&apos;) == &apos;prev&apos;)&#123;//点击上一张按钮</div><div class="line">            //用当前left值 + 500 传入函数roll</div><div class="line">            i = parseInt($(&quot;.list&quot;).css(&quot;left&quot;))+500;</div><div class="line">            roll(i);</div><div class="line">        &#125;else &#123;//点击下一张按钮</div><div class="line">            //用当前left值 - 500 传入函数roll</div><div class="line">            i=parseInt($(&quot;.list&quot;).css(&quot;left&quot;))-500;</div><div class="line">            roll(i);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    function roll(i)&#123;</div><div class="line">        if($(&quot;.list&quot;).is(&apos;:animated&apos;))&#123;//此处的作用是来判断动画是否执行完毕</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        $(&apos;.list&apos;).animate(&#123;//执行动画</div><div class="line">            &apos;left&apos;:i</div><div class="line">        &#125;,500,function()&#123;//执行之后回调</div><div class="line">            /*</div><div class="line">            此处的判断意义：</div><div class="line">            当 i = 0 的时候即图片位置到第一组图片的第一张的时候，把图片的位置定位到第二组的第一张，所有在点击上一张的时候图片的位置会从第二组的第一张移动到第一组的</div><div class="line">            当 i = list的left值到达第二组的最后一张时，再次点击下一次的时候会把图片的位置定位到第二组图片的第一张</div><div class="line">            */</div><div class="line">            </div><div class="line">            if(i == 0)&#123;</div><div class="line">                $(&apos;.list&apos;).css(&apos;left&apos;,-len*500/2)</div><div class="line">            &#125;else if(i == (1-len)*500)&#123;</div><div class="line">                $(&quot;.list&quot;).css(&apos;left&apos;,(1-len/2)*500);</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>此demo只是简单的运用了一个图片位置不停的在切换来实现的无缝滚动。<br>查看 <a href="https://jianchaoqd.github.io/roll/" target="_blank" rel="external">demo</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">黑魔法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片轮播</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">奇淫技巧</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">轮播器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">交互效果</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/29/roll/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/10/31/MVVM框架简介/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MVVM框架简介
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/10/24/MarkdownGrammar/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown语法简介</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -227,8 +353,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -297,6 +423,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -305,19 +439,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">黑魔法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">奇淫技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图片轮播</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">轮播器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">交互效果</a>
               </li>
             
             <div class="clearfix"></div>
